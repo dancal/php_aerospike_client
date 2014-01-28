@@ -483,6 +483,12 @@ PHP_METHOD(CitrusleafClient, set_log_file)
 	}
 }
 
+PHP_METHOD(CitrusleafClient, close) {
+	citrusleaf_object *clo = (citrusleaf_object *) zend_object_store_get_object(getThis() TSRMLS_CC);
+	citrusleaf_cluster_release_or_destroy(&clo->asc);
+	//citrusleaf_cluster_destroy
+}
+
 /* CitrusleafClient.connect */
 PHP_METHOD(CitrusleafClient, connect)
 {
@@ -1594,6 +1600,7 @@ static zend_function_entry php_citrusleaf_client_functions[] = {
 	PHP_ME(CitrusleafClient, set_log_level, php_citrusleaf_one_arg, ZEND_ACC_PUBLIC)
 	PHP_ME(CitrusleafClient, set_log_file, php_citrusleaf_one_arg, ZEND_ACC_PUBLIC)
 	PHP_ME(CitrusleafClient, connect, php_citrusleaf_one_arg, ZEND_ACC_PUBLIC)
+	PHP_ME(CitrusleafClient, close, NULL, ZEND_ACC_PUBLIC)
 	PHP_ME(CitrusleafClient, use_shm, php_citrusleaf_two_arg, ZEND_ACC_PUBLIC)
 	PHP_ME(CitrusleafClient, free_shm, NULL, ZEND_ACC_PUBLIC)
 	PHP_ME(CitrusleafClient, set_default_namespace, php_citrusleaf_one_arg, ZEND_ACC_PUBLIC)

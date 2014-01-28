@@ -1,3 +1,8 @@
+Changes
+---------------------------------------------
+add close function
+
+
 Accessing Aerospike Database via PHP requires building the Aerospike PHP native extension and placing the shared library file in the php system location:
 
 Building & Testing Aerospike PHP extension :
