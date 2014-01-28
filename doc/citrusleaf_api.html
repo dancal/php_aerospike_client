@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PHP API - Citrusleaf</title>
+<link href="main.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<div id="container" class="dev" >
+ <div id="content">
+ <h2>Citrusleaf PHP API</h2>
+ <h3>Class Citrusleaf</h3>
+<p>The Citrusleaf class contains all functionalities which can be used to access a
+Citrusleaf server.
+
+<h4>Connecting</h4>
+<pre>
+// connect to a specific citrusleaf cluster
+public CitrusleafResult <strong>connect</strong>(string $citrusleaf_url)
+</pre>
+
+<h4>Default Settings</h4>
+<pre>
+// set/get default timeout for operations, in milliseconds
+public CitrusleafResult <strong>set_default_timeout</strong>(int $millisecond)
+public int <strong>get_default_timeout</strong>()
+
+// set/get default write policy to use. 
+public CitrusleafResult <strong>set_default_writepolicy</strong>(CitrusleafWritePolicy $policy)
+public CitrusleafWritePolicy <strong>get_default_writepolicy</strong>()
+
+// set/get default namespace to use
+public CitrusleafResult <strong>set_default_namespace</strong>(string $namespace)
+public string <strong>get_default_namespace</strong>()
+
+// set/get default bin name
+public CitrusleafResult <strong>set_default_bin</strong>(string $setname)
+public string <strong>get_default_bin</strong>()
+
+// set/get default set name
+public CitrusleafResult <strong>set_default_set</strong>(string $setname)
+public string <strong>get_default_set</strong>()
+</pre>
+
+<h4>Writing/Reading</h4>
+<pre>
+// gets all the bins for a particular row, or if an array of bin_names are supplied
+// get only those bins 
+// returns a CitrusleafReponse, which contains information such as CitrusleafResult
+// generation of the data, and actual array of binname_value pairs
+public CitrusleafResponse <strong>get</strong>(object $key, [array $bin_names])
+
+// puts a row in a namespace, with the given binname-value array
+// the $uniqueFlag specifies if a uniqueness constraint is desired
+// the $current_generation value is used for optimistic lock versioning
+// the $ttlseconds specifies when the row can be evicted
+public CitrusleafResult <strong>put</strong>(object $key,array $single_bin_value,[WriteUniqueFlag uniqueFlag, int $current_generation,int $ttlseconds])
+</pre>
+
+<h4>Miscellaneous</h4>
+<pre>
+// for a bin that has numeric value, mathematically add the amount
+public CitrusleafResult <strong>add</strong>(object $key,string $bin_name,int amount,[int $current_generation,int $ttlseconds])
+
+// delete
+public CitrusleafResult <strong>delete</strong>(object $key,[int $current_generation])
+
+// connects to a particular node and gather information/statistics, using the requested well-known category_names 
+public CitrusleafResult <strong>info</strong>(string $host,string $port,array $names)
+</pre>
+
+ <h3>Class CitrusleafResponse</h3>
+<p>The CitrusleafResponse object is returned in the "get" call, to encapsulate all information needed to be returned to the caller
+
+<pre>
+// returns the actual result of the get call, whether it was successful
+public CitrusleafResult <strong>get_response_code</strong>()
+// returns the current generation (version) of this data 
+public int <strong>get_generation</strong>()
+// returns the binname_value array relevant to the call
+public array <strong>get_bins</strong>()
+</pre>
+ <h3>Class CitrusleafResult</h3>
+<p>A CitrusleafResult is returned for each of the Citrusleaf calls. It indicates success or type of failure of the call.
+<pre>
+class CitrusleafResult 
+{
+    const CITRUSLEAF_OK=0; 
+    const CITRUSLEAF_NOT_SET=1;
+    const CITRUSLEAF_SERVER_ERROR=2; 
+    const CITRUSLEAF_CLIENT_ERROR=3; 
+    const CITRUSLEAF_KEY_NOT_FOUND_ERROR=4; 
+    const CITRUSLEAF_KEY_FOUND_ERROR=5; 
+    const CITRUSLEAF_BIN_NOT_FOUND_ERROR=6; // only returned by a bin-specific "get"
+    const CITRUSLEAF_BIN_FOUND_ERROR=7;
+    const CITRUSLEAF_GENERATION_ERROR=8; 
+    const CITRUSLEAF_PARAMETER_ERROR=9;
+    const CITRUSLEAF_TIMEOUT=10;
+    const CITRUSLEAF_NO_HOSTS=11;
+    const CITRUSLEAF_INVALID_API_PARAM=12;
+    const CITRUSLEAF_UNKNOWN=13;
+};
+</pre>
+ <h3>Class CitrusleafWritePolicy</h3>
+<p>A CitrusleafWritePolicy specifies if any retry should automatically be done on "put" calls.
+<pre>
+class CitrusleafWritePolicy
+{
+    const ONCE=1;
+    const RETRY=2;
+    const ASSURED=3;
+};
+</pre>
+ <h3>Class CitrusleafWriteUniqueFlag</h3>
+<p>A CitrusleafWriteUniqueFlag Specifies if any uniqueness constraint should be applied on a "put" call.
+<pre>
+class CitrusleafWriteUniqueFlag
+{
+    const NONE=0;
+    const WRITE_ONLY_KEY_NOT_EXIST=1;
+    const WRITE_ONLY_BINS_NOT_EXIST=2;
+}
+</pre>

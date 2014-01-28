@@ -1,0 +1,28 @@
+This directory (examples) contains examples that you can use to verify and test your Aerospike PHP client installation.
+
+These examples may be run directly from command line via the PHP command, or be invoked as a web page under a web server such as Apache.
+
+To run an example via PHP command line, type:
+       php <example>.php
+e.g. 
+       php cl_info.php
+
+To run under a web server, place the .php files to the appropriate web server document directory. Depending on a you particular installation, that may be the www, htdocs, or other directory. To run, point your web browser to "http://localhost/cl_info.php", for example, to run the cl_info.php" example.
+
+**Important** Configuration file:
+    Please review the cl_example_config.php file content to verify the host, port, and namespace settings. Initially they are set to 127.0.0.1:3000/test. Please edit to fit your particular setup if necessary.
+
+Please ensure the Aerospike server is started and settled before running any of the examples.
+
+Examples:
+---------
+chk.php - Connects to aerospike, does a put, and read the same key 10000 times.
+cl_info.php - use cl_info() to get server info
+cl_add.php - Numerically incrementing an integer bin
+cl_exists.php - put, delete, and check for existence of keys
+cl_putmany.php - use putmany to insert to multi-bin keys
+cl_put_with_options.php - put with different unique options
+cl_set_default.php - set and get defaults
+func.php - a functional test of various functions
+static_cl_put.php - various flavors of put's
+negativeTests.php - a test of some erroneous parameter situations

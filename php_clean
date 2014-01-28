@@ -1,0 +1,28 @@
+rm	Makefile
+rm	Makefile.fragments
+rm	Makefile.global
+rm	Makefile.objects
+rm	acinclude.m4
+rm	aclocal.m4
+rm	-r autom4te.cache/
+rm	-r build/
+rm	config.guess
+rm	config.h
+rm	config.h.in
+rm	config.log
+rm	config.nice
+rm	config.status
+rm	config.sub
+rm	configure
+rm	configure.in
+rm	install-sh
+rm	libtool
+rm	ltmain.sh
+rm	missing
+rm	mkinstalldirs
+rm	run-tests.php
+rm 	*.lo
+rm 	src/*.lo
+rm 	-r src/.libs
+rm	-r .libs/
+rm 	-r modules/

@@ -1,0 +1,655 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold");
+@import url("http://fonts.googleapis.com/css?family=Cantarell:regular,bold");
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans+Mono");
+
+*{margin:0;padding:0}
+body{
+	font: normal normal normal 12px/18px 'Droid Sans', Arial, Helvetica, sans-serif;
+	font-family:"Droid Sans";
+	background-color: #ccc;
+}
+a{text-decoration:none;}
+#container,#masthead,#content,#footer{position:relative;}
+
+#container{
+	width:1024px;
+	margin:0 auto;
+	background-color:#FFF
+}
+
+#masthead{
+	height:145px;
+	overflow:visible;
+	z-index:100;
+}
+#topnav {
+	position:absolute;
+	top:12px;
+	right:25px;
+	width: 350px;
+}
+
+#devtext {
+	position:absolute;
+	top:35px;
+	right:60px;
+	width: 300px;
+}
+
+#container #content #benefitsbar{
+	width:674px;
+	height:180px;
+	background:url(../../_gfx/UI/bg_longbox.png) no-repeat 0 0;
+	font:15px/19px "Droid Sans", Arial, Helvetica, sans-serif;
+	position:relative;
+	padding:5px 15px 15px 15px;
+	margin-left:40px;
+}
+#container #content #benefitsbar dl{
+	float:left;
+	padding-right:20px;
+	width:184px;
+	border-left:1px solid #CDCDCD;
+	padding:5px 6px 0 12px;
+	height:180px;
+}
+#container #content #benefitsbar dl.first{border:none;padding-left:6px;}
+#container #content #benefitsbar dl dt{
+	font:22px/24px "Droid Sans", Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color:#f7931e;
+	padding:0 0 8px 0;
+}
+#container #content #benefitsbar dl dd ul {
+	padding-left:1em; 
+	list-style:outside;
+}
+#container #content #benefitsbar dl dd ul li {
+	font-size:13px;
+	line-height:18px;
+	padding: 0 0 8px 0;
+}
+#content {
+	min-height:500px;
+	height:500px;
+	height:auto !important;
+	z-index:50;
+	padding-bottom: 40px;
+}
+
+#container.foo #content {
+	background-color:#F3C977
+}
+#container.dev #content {
+	background-color:#FCDFAC
+}
+	
+#container #content #sidebar{
+	position:absolute;
+	width:30px;
+	top:18px;
+	right:32px;
+}
+
+#container.dev #content #sidebar{
+	width:30px;
+	right:20px;
+}
+
+#container #content #sidebar div {
+	background:url(../../_gfx/UI/bg_sidebar.png) no-repeat left bottom;
+}
+
+#container.dev #content #sidebar div {
+	background:url(../../_gfx/UI/bg_dev_sidebar.png) no-repeat left bottom;
+}
+
+#container #content #sidebar div h4{
+	background:url(../../_gfx/UI/bg_sidebar.png) no-repeat left top;
+	font:16px/19px, "Droid Sans", Arial, Helvetica, sans-serif;
+	font-family:"Droid Sans";
+	font-weight: bold;
+	color: #4d4d4d;
+	padding:10px 24px 10px 20px;
+}
+
+#container #content #sidebar div h3{
+	background:url(../../_gfx/UI/bg_sidebar.png) no-repeat left top;
+	font:16px/19px, "Droid Sans", Arial, Helvetica, sans-serif;
+	font-family:"Droid Sans";
+	font-weight: bold;
+	color: #4d4d4d;
+	padding:10px 24px 10px 20px;
+}
+
+#container.dev #content #sidebar div h3{
+	background:url(../../_gfx/UI/bg_dev_sidebar.png) no-repeat left top;
+	font:16px/19px "Droid Sans";
+	font-weight: bold;
+}
+
+#container #content #sidebar div h3 span{color:#f7931e;}
+#container #content #sidebar div p, 
+#container #content #sidebar div ul{
+	padding:10px 24px 24px 20px;
+	font:15px/18px "Droid Sans", Arial, Helvetica, sans-serif;
+	color:#4d4d4d;
+}
+
+#container #content #sidebar div h4{
+	font:28px/19px, "Droid Sans", Arial, Helvetica, sans-serif;
+	font-family:"Droid Sans";
+	font-weight: bold;
+}
+
+#container #content #sidebar div p.blogcontent{
+	padding-bottom:0px;
+	padding-top:0px;
+	font:11px/13px "Droid Sans", Arial, Helvetica, sans-serif;
+}
+
+#container #content #sidebar div p.blogtopic{
+	font:12px/14px "Droid Sans", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	padding-bottom:0px;
+	padding-top:5px;
+}
+
+#container #content #sidebar #twitterOutside #twitter p.twitterText {
+	padding-top:2px;
+	padding-bottom:0px;
+	font:11px/13px "Droid Sans", Arial, Helvetica, sans-serif;
+}
+#container #content #sidebar #twitterOutside #twitter p.twitterTime {
+	padding-top:2px;
+	padding-bottom:5px;
+	font-color:#7d7d7d;
+	font:8px/9px "Droid Sans", Arial, Helvetica, sans-serif;
+}
+
+#container #content #sidebar div p.twitterHeader{
+	font-size:14px;
+	padding-top:5px;
+	padding-bottom:0px;
+}
+
+
+#sidebar a{color:#4d4d4d;}
+#sidebar a:hover{color:#f7931e;}
+
+#container #footer a.readmore,
+#container #content #sidebar div a.readmore{
+	text-decoration:none;
+	color:#f7931e;
+	font-size:10px;
+	display:block;
+	height:10px;
+	padding:0;
+	margin:0px 0px 2px 0;
+}
+#container #content #sidebar div ul li{
+	list-style:none;
+	border-bottom:1px solid #CCC;
+	padding-bottom:16px;
+}
+#container #content #sidebar div p strong{
+	font:normal normal bold 15px/18px  "Droid Sans",Arial,Helvetica,sans-serif;
+	color:#f7931e;
+}
+#footer {
+	background-color:#000;
+	z-index:10;
+	padding:60px 30px 10px 40px;
+	min-height:30px;
+	height:auto !important;
+	height:30px;
+}
+.homepage #slideshow{
+	width:700px;
+	height:374px;
+	position:relative;
+	overflow:hidden;
+}
+.homepage #slideshow #fg,
+.homepage #slideshow #bg{
+	position:absolute;
+	top:17px;
+	left:-20px;
+}
+.homepage #slideshow #fg{z-index:10}
+.homepage #slideshow #bg{z-index:5}
+
+.devhomepage #devIntro{
+	position:relative;
+	left:45px;
+	top:10px;
+	}
+
+.homepage #container #content h2 {
+	font:bold 42px/43px "Cantarell", arial, helvetica, sans-serif;
+	font-family:Cantarell;
+	color: #4d4d4d;
+	padding: 18px 300px 18px 60px;
+}
+.homepage #container #content h1 {
+	font: normal normal normal 32px/38px "Cantarell", Arial, sans-serif;
+	font-family:Cantarell;
+	color:  #c95b28;
+	padding: 0px 300px 18px 140px;
+	letter-spacing: normal;
+}
+
+.devhomepage #container #content h1 {
+	font: normal normal normal 32px/38px "Cantarell", Arial, sans-serif;
+	font-family:Cantarell;
+	color:  #c95b28;
+	padding: 20px 400px 18px 140px;
+}
+
+.devhomepage #container #content p{
+	padding-left:10px;
+	font-size:18px;
+	line-height:1.25;
+}
+.devhomepage #container #content p span.orangebig{
+	font-size:24px;
+	color: #c95b28;
+}
+#container #content h1,
+#container #content p,
+#container #content blockquote,
+#container #content h2,
+#container #content h3,
+#container #content h4,
+#container #content h5,
+#container #content div.imgFrame,
+#container #content ul.content{
+	font-family:'Droid Sans';
+	padding-left:50px;
+	padding-right:50px;
+	padding-bottom:10px;
+}
+
+#container.dev #content p{
+	padding-right:50px;
+}
+
+#container #content ul.content {padding-left:255px;list-style:outside}
+
+#container #content div.imgFrame table{
+	font-size:11px;
+}
+#container #content pre{
+    width:650px;
+    font:10px/12px 'Droid Sans Mono';
+	font-family:'Droid Sans Mono';
+    overflow-x:auto;
+    overflow-y:hidden;
+	padding:5px 15px 5px 5px;
+    background-color:#FFFFFF;
+    border-style:solid;
+    border:1px;
+    position:relative;
+    left:100px;
+    margin-bottom:20px;
+}
+
+#cswtest{
+	background-color:#FFFFFF;
+	border-style:dotted;
+	border-width:2px;
+}
+#container #content div.imgFrame ul,
+#container #content div.imgFrame ol{
+	list-style-position:outside;
+	padding-left:2em;
+	font-weight:normal;
+}
+#container #content div.imgFrame ul a,
+#container #content div.imgFrame ol a,
+#container #content div.imgFrame td a,
+#container #content p a{
+	color:#c95b28;
+}
+
+#container #content div.imgFrame ul a:hover,
+#container #content div.imgFrame ol a:hover,
+#container #content div.imgFrame td a:hover,
+#container #content p a:hover{
+	color:#000;
+}
+
+#container #content h1{
+	font:normal normal normal 24px/32px Cantarell,Arial, Helvetica, sans-serif;
+	font-family:'Cantarell';
+	font-weight:normal;
+	padding-top:20px;
+	padding-bottom:20px;
+	color: #4d4d4d;
+}
+#container.trial #content h1{
+	font:42px/43px 'Droid Sans',Arial, Helvetica, sans-serif;
+}
+
+#container.trial #content h2{
+	font:15px/20px 'Droid Sans',Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+#container #content h2{
+	font:32px/38px 'Droid Sans',Arial, Helvetica, sans-serif;
+	font-family:'Droid Sans';
+	color:#f7931e;
+	padding-bottom:8px;
+}
+
+#container.#content h2{
+	color:#236fc0;
+}
+
+#container.dev #content h2{
+	color:#AA6900;
+}
+
+#container #content h3{
+	font:bold 16px/19px 'Droid Sans',Arial,Helvetica,sans-serif;
+	color:#4d4d4d;
+	color:#AA6900;
+	padding-bottom:2px;
+}
+
+#container #content h4{
+	padding-bottom:2px;
+}
+
+#container #content h5{
+	font:12px/14px'Droid Sans', Arial, Helvetica, sans-serif;
+	padding-bottom:2px;
+	padding-top:8px;
+	font-style:italic;
+}
+
+#container #content p {
+	font:normal 12px/16px 'Droid Sans', Arial, Helvetica, sans-serif;
+	padding-bottom:18px;
+}
+#container #content p.indent {
+	font:normal 12px/16px 'Droid Sans', Arial, Helvetica, sans-serif;
+	padding-left:20px; 
+	padding-bottom:18px;
+}
+#container #content p.quote{
+	font:italic 14px/18px Arial, Helvetica, sans-serif;
+	font-style:italic;
+	color:#c95b28;
+}
+#container #content #btn_download {
+	position: relative;
+	left: 60px;
+	top: 5px;
+	
+}
+
+#container #content p.api {
+    font:bold 10px/12px 'Droid Sans Mono';
+    padding-bottom:0px;
+}
+
+#container #content p.apiType{
+	font-style:italic;
+	color:#c95b28;
+	padding-bottom:2px;
+}
+
+#container #content p.news {
+    padding-left:311px;
+}
+
+#container.dev #content #btn_download {
+	position: relative;
+	left: 30px;
+	top: 5px;
+}
+#container #content #btn_whitepaper {
+	position: relative;
+	left: 60px;
+	margin-bottom:40px;
+	
+}
+#container #content #leftside {
+	position:absolute;
+	left:0;
+	/*
+	position:fixed;
+	top:165px;*/
+	width:212px;
+	top: 18px;
+}
+
+
+#container #content #leftside ul{
+	background:url(../../_gfx/UI/bg_leftside.png) no-repeat 0 bottom;
+	padding-bottom:20px;
+	list-style:none;
+	font:12px/15px "Droid Sans", Arial, sans-serif;
+}
+
+#container.dev #content #leftside ul{
+	background:url(../../_gfx/UI/bg_dev_leftside.png) no-repeat 0 bottom;
+	padding-bottom:20px;
+	list-style:none;
+	font:12px/15px "Droid Sans", Arial, sans-serif;
+}
+
+#container #content #leftside ul li{
+	background:url(../../_gfx/UI/bg_leftside.png) no-repeat 0 -20px;
+	padding:7px 0 0px 50px;
+	font-weight:bold;
+}
+
+#container.dev #content #leftside ul li{
+	background:url(../../_gfx/UI/bg_dev_leftside.png) no-repeat 0 -20px;
+	padding:7px 0 0px 50px;
+	font-weight:bold;
+}
+
+
+#container #content #leftside ul li.first{
+	background:url(../../_gfx/UI/bg_leftside.png) no-repeat 0 0;
+}
+
+#container.dev #content #leftside ul li.first{
+	background:url(../../_gfx/UI/bg_dev_leftside.png) no-repeat 0 0;
+}
+
+#container #content #leftside ul li a{
+	color:#4d4d4d;
+}
+#container #content #leftside ul li.selected a,
+#container #content #leftside ul li a:hover {
+	color:#236fc0;
+}
+#container #content #leftside ul li ul {
+	background:none;
+	padding:4px 20px 0px 10px;
+	height:1px;
+	overflow:hidden;
+}
+#container.dev #content #leftside ul li ul {
+	background:none;
+	padding:4px 20px 0px 10px;
+	height:1px;
+	overflow:hidden;
+}
+
+#container #content #leftside ul li.selected ul{
+	height:auto;
+}
+#container #content #leftside ul li ul li{
+	background:none;
+	padding:2px 20px 0 10px;
+	font:11px/15px "Droid Sans", Arial, sans-serif;
+	font-weight:normal;
+}
+#container.dev #content #leftside ul li ul li{
+	background:none;
+	padding:2px 20px 0 10px;
+	font:11px/15px "Droid Sans", Arial, sans-serif;
+	font-weight:normal;
+}
+
+#container #content #leftside ul li.selected ul li a{
+	color:#4d4d4d;
+}
+
+.footerbox{
+	padding:10px 10px 18px 10px;
+	margin-bottom:10px;
+	color:#b3b3b3;
+	font:13px/15px "Droid Sans", Arial, sans-serif;
+	position:relative;
+	float:left;
+}
+.footerbox div.tl,
+.footerbox div.tr,
+.footerbox div.bl,
+.footerbox div.br{
+	position:absolute;
+	width:50%;
+	height:50%;
+	background-image:url(../../_gfx/UI/bg_bottombar.png);
+	background-repeat:no-repeat;
+	z-index:-1;
+}
+.footerbox div.tl{
+	top:0;
+	left:0;
+	background-position:left top;
+}
+.footerbox div.tr{
+	top:0;
+	right:0;
+	background-position:right top;
+}
+.footerbox div.bl{
+	bottom:0;
+	left:0;
+	background-position:left bottom;
+}
+.footerbox div.br{
+	bottom:0;
+	right:0;
+	background-position:right bottom;
+}
+.footerbox h3 span,.footerbox a:hover{color:#f7931e;}
+.footerbox a{color:#b3b3b3;}
+.longbox {
+	width:600px;
+	margin-right:20px;
+}
+.shortbox{
+	width:280px;
+	float:left;
+	margin-right:20px;
+}
+#container #footer .footerbox h3 {
+	font: bold 16px/19px "Droid Sans", Arial, sans-serif;
+	color: #FFF;
+	padding: 0 0 10px 0;
+}
+.quickmenu,.leaflist {
+	list-style: none;
+}
+.footerbox ul {list-style:none;}
+.footerbox ul li {padding: 0 0 10px 0;
+}
+.footerbox ul li img{margin-bottom:-3px;margin-right:6px;}
+.quickmenu li {
+	float: left;
+	height: auto;
+	width: 122px;
+	padding:0;
+}
+.leaflist li{
+	background:url(../../_gfx/icons/small_leaf.jpg) no-repeat 0 3px;
+	padding:0 0 6px 32px;
+}
+
+#footer .sidebar {
+	width: 240px;
+	height:100%;
+}
+#footer .divider {
+	position:relative;
+	top:-4px;
+}
+#footer #btmlogo{
+	position:absolute;
+	top:0px;
+	left:440px;
+}
+#container #footer div.divider a {
+	display:block;
+	float:left;
+	width:160px;
+	padding:0 0 6px 35px;
+	background:url(../../_gfx/icons/small_leaf.jpg) no-repeat 0 3px;
+	font-size:14px;
+	color: #fff;
+}
+#container #footer div.divider a:hover{
+	color:#c95b28;
+}
+#container #footer div.divider div.badges{
+	text-align:right;
+}
+#container #footer div.divider div.badges a {
+	padding:0 0 0 30px;
+	width:22px;
+	background:none;
+}
+#container #content .imgFrame table th {
+	text-align: left;
+	font-size:10px
+}
+
+.toprule{
+	color:#ff0000;
+	background-color:#f7931e;
+	height:3px;
+}
+
+.inputText{
+	position:absolute;
+	left: 440px;
+	width:50;
+}
+
+.apiList{
+	position:relative;
+	left:30px;
+}
+
+.devIntroText{
+	padding:0 0 0 0;
+}
+
+
+.twitterHeader2 a {
+    color:#f7931e;
+    }
+    
+.inlineCode{
+    font:10px/12px 'Droid Sans Mono';
+}
+
+.proof{
+    color:#ff0000;
+}
+
+.pushme{
+	position:absolute;
+	left: 340px;
+}
