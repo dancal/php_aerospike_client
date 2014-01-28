@@ -1,6 +1,6 @@
-Changes
+Changes - please don't use this. not yet test.
 ---------------------------------------------
-add close function
+add close function - widerplanet
 
 
 Accessing Aerospike Database via PHP requires building the Aerospike PHP native extension and placing the shared library file in the php system location:
